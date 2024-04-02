@@ -9,3 +9,13 @@ class AlunoAdmin(admin.ModelAdmin):
     list_filter = ('cidade', 'modalidades')
     # Adiciona uma caixa de pesquisa. A pesquisa será feita por nome e email do aluno
     search_fields = ['nome', 'email']
+
+@admin.register(Cidade)
+class CidadeAdmin( admin.ModelAdmin):
+    list_display = ('nome', 'sigla_estado', 'cep', 'fundacao_cidade')
+    search_fields = ['nome', 'sigla_estado']
+
+@admin.register(Modalidade)
+class ModalidadeAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+    search_fields = ['nome']   
